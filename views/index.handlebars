@@ -1,0 +1,63 @@
+<div class="container">
+    <div class="jumbotron text-center">
+        <h1>Burger Time!</h1>
+        <img src="/assets/img/hamburger.png" width="auto" height="auto">
+    </div>
+
+    <div class="row">
+        <div class="col-md-5 col-md-offset-1 text-center">
+            <div class="panel-panel default">
+                <h2>Time to eat burger!</h2>
+                <ul class="list-group">
+                    {{#each burger_data}}
+                    {{#unless devoured}}
+                    <li class="list-group-item">
+                        <div class="input-group">
+
+                            <form action="/update/{{this.id}}" method="post">
+                                <p class="lead">{{this.id}}. {{ burger_name }}</p>
+                                <button class="eatBurger" type="submit" id={{this.id}}>DEVOIR IT!</button>
+                            </form>
+
+                        </div>
+
+                    </li>
+                    {{/unless}}
+                    {{/each}}
+
+                </ul>
+            </div>
+
+        </div>
+        
+            <div class="col-md-5 md-offset-2 text-center">
+                    <h2>Eaten burgers!</h2>
+                <div class="panel-panel default">
+                    <ul class="list-group">
+                        {{#each burger_data}}
+                        {{#if devoured}}
+                        <li class="list-group-item">
+                                <p class="lead">{{this.id}}. {{ burger_name }}</p>
+                        </li>
+                        {{/if}}
+                        {{/each}}
+                    </ul>
+                </div>
+            </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-10 md-offset-1 text-center">
+            <p class="lead">Are you still hungry? <br> Add burger and click submit for eating!</p>
+            
+            <form action="">
+                <div class="form-group">
+                    <input type="text" name="newBurger" class="newBurger">
+                    <button class="createBurger" type="submit">Sumbit</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+

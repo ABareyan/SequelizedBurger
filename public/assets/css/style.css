@@ -1,0 +1,16 @@
+body {
+    background-color: antiquewhite;
+}
+
+.jumbotron {
+    background-color: antiquewhite;
+}
+
+p {
+    display: inline-block;
+    margin-right: 4px;
+}
+
+img {
+    width: 30%;
+}
